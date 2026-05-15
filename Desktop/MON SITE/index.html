@@ -361,77 +361,90 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2r
     <h2 class="s-title reveal d1">Ce que j'ai<br><em>construit</em></h2>
     <div class="projects-grid">
 
+      <!-- PROJET 1 : THEOPICTURE -->
       <div class="pj-card reveal">
         <div class="pj-visual pj-v1">
           <div class="pj-visual-bg">
-            <pre class="pj-code">const app = express()
-app.use(cors())
-app.get('/api/users',
-  auth, async (req, res) => {
-  const users = await
-    User.find({active: true})
-  res.json({ users, total })
-})</pre>
+            <pre class="pj-code">/* Site vitrine photographe */
+.gallery-grid {
+  columns: 3;
+  gap: 1rem;
+}
+.photo-card {
+  break-inside: avoid;
+  position: relative;
+  overflow: hidden;
+}
+.photo-card:hover img {
+  transform: scale(1.06);
+  transition: .8s ease;
+}</pre>
           </div>
-          <div class="pj-glow" style="background:var(--violet)"></div>
+          <div class="pj-glow" style="background:var(--amber)"></div>
           <div class="pj-num">01</div>
         </div>
         <div class="pj-info">
           <div>
-            <div class="pj-tags"><span class="tag tag-c">React</span><span class="tag tag-g">Node.js</span><span class="tag tag-v">MongoDB</span></div>
-            <div class="pj-name">App de gestion<br>de tâches</div>
-            <div class="pj-desc">Full-stack MERN avec authentification JWT, CRUD complet, interface drag & drop et filtres dynamiques en temps réel.</div>
+            <div class="pj-tags"><span class="tag tag-c">HTML</span><span class="tag tag-a">CSS</span><span class="tag tag-g">JavaScript</span></div>
+            <div class="pj-name">Theo<br>Picture</div>
+            <div class="pj-desc">Site vitrine complet pour un photographe professionnel — galerie dynamique de 28 photos, système de réservation en ligne, page de services et interface d'administration.</div>
           </div>
           <div class="pj-links">
             <a href="https://cheikhahmeth11.github.io/Theopicture/" class="pj-link" target="_blank">↗ Démo live</a>
-            <a href="https://cheikhahmeth11.github.io/Theopicture/" class="pj-link" target="_blank">⌥ Code source</a>
+            <a href="https://github.com/cheikhahmeth11/Theopicture" class="pj-link" target="_blank">⌥ Code source</a>
           </div>
         </div>
       </div>
 
+      <!-- PROJET 2 : SASSOUM RADIANCE -->
       <div class="pj-card reveal d1">
         <div class="pj-visual pj-v2">
           <div class="pj-visual-bg">
-            <pre class="pj-code">.hero {
-  animation: float 3s
-    ease-in-out infinite;
-}
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+            <pre class="pj-code">/* E-commerce luxury — Firebase */
+async function loadCatalog() {
+  const snap = await getDocs(
+    collection(db, 'products')
+  )
+  const prods = snap.docs.map(
+    d => ({ id: d.id, ...d.data() })
+  )
+  renderVet(prods.filter(
+    p => p.cat === 'jogging'
+  ))
 }</pre>
           </div>
-          <div class="pj-glow" style="background:var(--green)"></div>
+          <div class="pj-glow" style="background:#b08d57"></div>
           <div class="pj-num">02</div>
         </div>
         <div class="pj-info">
           <div>
-            <div class="pj-tags"><span class="tag tag-c">HTML/CSS</span><span class="tag tag-a">JavaScript</span></div>
-            <div class="pj-name">Landing page<br>animée</div>
-            <div class="pj-desc">Page d'accueil pour une startup avec animations CSS avancées, effets parallax et design responsive pixel-perfect.</div>
+            <div class="pj-tags"><span class="tag tag-c">HTML/CSS</span><span class="tag tag-a">JavaScript</span><span class="tag tag-v">Firebase</span></div>
+            <div class="pj-name">Sassoum<br>Radiance</div>
+            <div class="pj-desc">Boutique e-commerce luxe mode & skincare — catalogue produits via Firebase Firestore, panier persistant, commande WhatsApp, interface admin, design premium responsive.</div>
           </div>
           <div class="pj-links">
-            <a href="https://cheikhahmeth11.github.io/Espoir-de-la-rue/" class="pj-link" target="_blank">↗ Démo live</a>
-            <a href="https://github.com/cheikhahmeth11/Espoir-de-la-rue" class="pj-link" target="_blank">⌥ Code source</a>
+            <a href="https://cheikhahmeth11.github.io/SassoumRadiance/" class="pj-link" target="_blank">↗ Démo live</a>
+            <a href="https://github.com/cheikhahmeth11/SassoumRadiance" class="pj-link" target="_blank">⌥ Code source</a>
           </div>
         </div>
       </div>
 
+      <!-- PROJET 3 : ESPOIR DE LA RUE -->
       <div class="pj-card reveal d2">
         <div class="pj-visual pj-v3">
           <div class="pj-visual-bg">
-            <pre class="pj-code">async function fetchWeather(city) {
-  const res = await fetch(
-    `${API_URL}?q=${city}
-    &appid=${KEY}&units=metric`
-  )
-  const data = await res.json()
-  renderWeather(data)
-  updateChart(data.daily)
+            <pre class="pj-code">/* Landing page associative */
+.hero-title .word {
+  display: block;
+  transform: translateY(110%);
+  animation: riseUp .9s
+    cubic-bezier(.16,1,.3,1)
+    forwards;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .85s ease;
 }</pre>
           </div>
           <div class="pj-glow" style="background:var(--cyan)"></div>
@@ -439,13 +452,13 @@ app.get('/api/users',
         </div>
         <div class="pj-info">
           <div>
-            <div class="pj-tags"><span class="tag tag-a">JavaScript</span><span class="tag tag-g">API REST</span></div>
-            <div class="pj-name">Dashboard<br>météo</div>
-            <div class="pj-desc">Application météo avec API externe, géolocalisation, visualisation des données sur 7 jours avec Chart.js.</div>
+            <div class="pj-tags"><span class="tag tag-c">HTML</span><span class="tag tag-a">CSS</span><span class="tag tag-g">JavaScript</span></div>
+            <div class="pj-name">Espoir<br>de la Rue</div>
+            <div class="pj-desc">Landing page pour une association caritative — animations CSS avancées, effets de révélation au scroll, typographie cinématique, formulaire de contact et design responsive.</div>
           </div>
           <div class="pj-links">
-            <a href="https://fitmagmat.netlify.app/" class="pj-link" target="_blank">↗ Démo live</a>
-            <a href="https://fitmagmat.netlify.app/" class="pj-link" target="_blank">⌥ Code source</a>
+            <a href="https://cheikhahmeth11.github.io/Espoir-de-la-rue/" class="pj-link" target="_blank">↗ Démo live</a>
+            <a href="https://github.com/cheikhahmeth11/Espoir-de-la-rue" class="pj-link" target="_blank">⌥ Code source</a>
           </div>
         </div>
       </div>
@@ -517,6 +530,13 @@ app.get('/api/users',
           <div class="cc-inner">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--cyan)" style="flex-shrink:0"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             <div><div class="cc-label">GitHub</div><div class="cc-val">cheikhahmeth11</div></div>
+            <span class="cc-arr">→</span>
+          </div>
+        </a>
+        <a class="cc" href="tel:+221783060776">
+          <div class="cc-inner">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5" style="flex-shrink:0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 15z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><div class="cc-label">Téléphone · WhatsApp</div><div class="cc-val">+221 78 306 07 76</div></div>
             <span class="cc-arr">→</span>
           </div>
         </a>
